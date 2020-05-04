@@ -2,4 +2,6 @@
 
 Tool for detecting viewbots on Twitch.
 
-The app is hosted on [Heroku]().
+This app is hosted on [Heroku](https://begonebot.herokuapp.com).
+
+This app compares the current viewer count with the number of users in chat. If the channel has more viewers than users in chat (>50%), then it's probably viewbotting.
