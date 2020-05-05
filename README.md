@@ -12,10 +12,10 @@ This app is hosted on [Heroku](https://begonebot.herokuapp.com).
 
 # Installing
 
-- **Prerequisite:** Node 12.x
-- Install dependencies by running `npm run setup`.
-- Create a .env file that contains PORT, NODE_ENV, CLIENT_ID, CLIENT_SECRET.
-- Start dev server with `npm run dev`.
+- Prerequisite: Node 12.x
+- Install dependencies by running `npm run setup`
+- Create a .env file that contains PORT, NODE_ENV, CLIENT_ID, CLIENT_SECRET
+- Start dev server with `npm run dev`
 
 # License
 
