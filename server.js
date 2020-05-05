@@ -19,6 +19,10 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 // Prod environment
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(__dirname + "/client/build"));
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + "/client/build/index.html"));
+}
 
 // Channel route
 app.use("/channel", require("./routes/channel"));
