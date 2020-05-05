@@ -1,49 +1,55 @@
 // Import required packages
 import React, { useState } from "react";
-import axios from "axios";
+import "./App.css";
+import Channel from "./Channel";
 
 function App() {
-  // State for channel data
+  // App state
   const [username, setUsername] = useState("");
-  const [viewCount, setViewCount] = useState(0);
-  const [chatCount, setChatCount] = useState(0);
-  const [live, setLive] = useState(false);
-
-  // GET Twitch channel data
-  const getUserData = (e) => {
-    e.preventDefault();
-    // Update viewCount
-    axios.get(`http://localhost:8000/channel/stream/${username}`).then((response) => {
-      if (response.data[0] !== undefined) {
-        return setViewCount(response.data[0].viewer_count), setLive(true);
-      } else {
-        return setViewCount(0), setLive(false);
-      }
-    });
-
-    // Update chatCount
-    axios.get(`http://localhost:8000/channel/chat/${username}`).then((response) => {
-      return setChatCount(response.data.chatter_count);
-    });
-  };
+  const [visible, setVisible] = useState(false);
 
   // Handle onChange event for user input
   const updateUsername = (e) => {
     setUsername(e.target.value);
   };
 
+  // Displays channel component
+  const displayChannelData = (e) => {
+    e.preventDefault();
+    setVisible(true);
+  };
+
+  // Renders main app view
   return (
     <div className="App">
-      <h1>🤖 Be Gone Bot 🤖</h1>
-      <form className="search-form" onSubmit={getUserData}>
-        <input type="text" placeholder="Enter Twitch Username" value={username} onChange={updateUsername} />
-        <button type="submit">Search</button>
-      </form>
-      <h1>Username: {username}</h1>
-      <h2>View Count: {viewCount}</h2>
-      <h2>Chat Count: {chatCount}</h2>
-      <h2>Bots: {viewCount - chatCount}</h2>
-      <h2>Bot %: {((viewCount - chatCount) / viewCount) * 100}</h2>
+      <header>
+        <h1 className="app-title">
+          <span role="img" aria-label="robot">
+            🤖
+          </span>{" "}
+          Be Gone Bot{" "}
+          <span role="img" aria-label="robot">
+            🤖
+          </span>
+        </h1>
+      </header>
+      <section>
+        <h3>
+          How does this work?{" "}
+          <span role="img" aria-label="thinking">
+            🤔
+          </span>
+        </h3>
+        <p>Be Gone Bot compares the current viewer count with the number of users in chat.</p>
+        <p>If the channel has significantly more viewers than users in chat, then it's probably viewbotting.</p>
+        <form className="app-form" onSubmit={displayChannelData}>
+          <input className="app-input" type="text" placeholder="Enter Twitch Username" value={username} onChange={updateUsername} />
+          <button className="app-button" type="submit">
+            Search
+          </button>
+        </form>
+        {visible ? <Channel username={username}></Channel> : null}
+      </section>
     </div>
   );
 }

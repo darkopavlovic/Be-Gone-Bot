@@ -1,0 +1,26 @@
+.app-channel {
+  margin-top: 25px;
+  background: #141414;
+  border-radius: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 20%;
+  height: 335px;
+}
+
+.container {
+  padding-top: 15px;
+  font-size: 25px;
+}
+
+h2 {
+  padding-bottom: 10px;
+}
+
+h4 {
+  padding-bottom: 5px;
+}
+
+img {
+  padding-left: 10px;
+}
