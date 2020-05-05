@@ -11,9 +11,10 @@ export default function Channel({ username }) {
   const [live, setLive] = useState(false);
 
   // Get twitch stream and chat data
+  // DEV ONLY URL: `http://localhost:8000/channel/stream/${username}` and `http://localhost:8000/channel/chat/${username}`
   const fetchData = () => {
-    const streamAPI = axios.get(`http://localhost:8000/channel/stream/${username}`);
-    const chatAPI = axios.get(`http://localhost:8000/channel/chat/${username}`);
+    const streamAPI = axios.get(`/channel/stream/${username}`);
+    const chatAPI = axios.get(`/channel/chat/${username}`);
 
     axios.all([streamAPI, chatAPI]).then(
       axios.spread((...allData) => {
