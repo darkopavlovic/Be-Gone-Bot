@@ -6,6 +6,7 @@ import Channel from "./Channel";
 function App() {
   // App state
   const [username, setUsername] = useState("");
+  const [query, setQuery] = useState("");
   const [visible, setVisible] = useState(false);
 
   // Handle onChange event for user input
@@ -16,6 +17,7 @@ function App() {
   // Displays channel component
   const displayChannelData = (e) => {
     e.preventDefault();
+    setQuery(username);
     setVisible(true);
   };
 
@@ -48,7 +50,7 @@ function App() {
             Search
           </button>
         </form>
-        {visible ? <Channel username={username}></Channel> : null}
+        {visible ? <Channel username={query}></Channel> : null}
       </section>
     </div>
   );
