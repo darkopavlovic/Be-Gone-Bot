@@ -1,6 +1,5 @@
 // Import required packages
 const express = require("express");
-const morgan = require("morgan");
 const path = require("path");
 
 // Express gets called
@@ -16,12 +15,10 @@ app.use((req, res, next) => {
 // Dev environment
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
-  app.use(morgan("dev"));
 }
 
 // Prod environment
 if (process.env.NODE_ENV === "production") {
-  app.use(morgan("tiny"));
   app.use(express.static("client/build"));
   //app.get(/.*/, (req, res) => {
   //res.sendFile(path.join(__dirname, "client", "build", "index.html"));

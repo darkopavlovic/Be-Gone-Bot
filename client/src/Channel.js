@@ -28,9 +28,10 @@ export default function Channel({ username }) {
     );
   };
 
-  // Calls fetchData on component load
+  // Calls fetchData on username update
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line
   }, [username]);
 
   // Renders channel view
