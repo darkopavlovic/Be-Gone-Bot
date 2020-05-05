@@ -5,6 +5,13 @@ const morgan = require("morgan");
 // Express gets called
 const app = express();
 
+// Enable cross-origin resource sharing
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET");
+  next();
+});
+
 // Dev environment
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();

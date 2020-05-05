@@ -19,7 +19,7 @@ router.get("/stream/:username", async (req, res) => {
         return axios.get(`${BASE_STREAM_URL}?user_login=${req.params.username}`, { headers: { "Client-ID": CLIENT_ID, "Authorization": `Bearer ${response.data.access_token}` } });
       })
       .then((response) => {
-        res.send(response.data);
+        res.send(response.data.data);
       });
   } catch (error) {
     res.status(400).json({ error: error.message });
