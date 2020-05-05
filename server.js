@@ -1,6 +1,7 @@
 // Import required packages
 const express = require("express");
 const morgan = require("morgan");
+const path = require("path");
 
 // Express gets called
 const app = express();
@@ -20,8 +21,10 @@ if (process.env.NODE_ENV !== "production") {
 
 // Prod environment
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(__dirname + "/client/build"));
-  app.get(/.*/, (req, res) => res.sendFile(__dirname + "/client/build/index.html"));
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
 }
 
 // Channel route
