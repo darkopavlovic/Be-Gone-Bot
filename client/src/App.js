@@ -9,7 +9,7 @@ function App() {
   const [username, setUsername] = useState("");
   const [query, setQuery] = useState("");
   const [visible, setVisible] = useState(false);
-  const [darkTheme, setDarkTheme] = useState(true);
+  const [darkTheme, setDarkTheme] = useState(false);
 
   // Handle onChange event for dark mode
   const darkMode = () => {
@@ -24,8 +24,14 @@ function App() {
   // Displays channel component
   const displayChannelCard = (e) => {
     e.preventDefault();
-    setQuery(username);
-    setVisible(true);
+    const tempUsername = username.replace(/\s+/g, "");
+    if (tempUsername.length !== 0) {
+      setQuery(tempUsername);
+      setUsername(tempUsername);
+      setVisible(true);
+    } else {
+      setUsername("");
+    }
   };
 
   // Renders main app view
