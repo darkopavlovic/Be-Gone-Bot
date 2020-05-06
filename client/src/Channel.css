@@ -1,26 +1,15 @@
-.app-channel {
+.MuiCard-root {
+  width: 350px;
+  height: 375px;
   margin-top: 25px;
-  background: #141414;
-  border-radius: 15px;
-  margin-right: auto;
   margin-left: auto;
-  width: 20%;
-  height: 335px;
+  margin-right: auto;
 }
 
-.container {
-  padding-top: 15px;
-  font-size: 25px;
-}
-
-h2 {
-  padding-bottom: 10px;
-}
-
-h4 {
-  padding-bottom: 5px;
+.MuiTypography-h4 {
+  padding-bottom: 15px;
 }
 
 img {
-  padding-left: 10px;
+  padding-bottom: 15px;
 }

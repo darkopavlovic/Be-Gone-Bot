@@ -1,16 +1,18 @@
 // Import required packages
+import { Card, CardActions, CardContent, Button, Typography, Link, CircularProgress } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Channel.css";
 
-export default function Channel({ username }) {
+export default function Channel({ username, theme }) {
   // Channel data state
   const [viewCount, setViewCount] = useState(0);
   const [chatCount, setChatCount] = useState(0);
   const [displayName, setDisplayName] = useState("");
+  const [finishedLoading, setFinishedLoading] = useState(false);
   const [live, setLive] = useState(false);
 
-  // Get twitch stream and chat data
+  // Get Twitch stream and chat data
   const fetchData = () => {
     const streamAPI = axios.get(`/channel/stream/${username}`);
     const chatAPI = axios.get(`/channel/chat/${username}`);
@@ -22,6 +24,10 @@ export default function Channel({ username }) {
           setDisplayName(allData[0].data[0].user_name);
           setChatCount(allData[1].data.chatter_count);
           setLive(true);
+          setFinishedLoading(true);
+        } else {
+          setLive(false);
+          setFinishedLoading(true);
         }
       })
     );
@@ -34,25 +40,49 @@ export default function Channel({ username }) {
   }, [username]);
 
   // Renders channel view
-  if (live === true) {
+  if (live === true && finishedLoading === true) {
     return (
-      <div className="app-channel">
-        <div className="container">
-          <h2>
-            {displayName}
-            <a href={`https://www.twitch.tv/${username}`} target="_blank" rel="noopener noreferrer">
-              <img src={require("./assets/external.svg")} alt="link" />
-            </a>
-          </h2>
-          <img src={require("./assets/robot.png")} alt="robot" />
-          <h4>View Count: {viewCount}</h4>
-          <h4>Chat Count: {chatCount}</h4>
-          <h4>Bots: {viewCount > chatCount ? viewCount - chatCount : chatCount - viewCount}</h4>
-          <h4>Bot Ratio: {viewCount > chatCount ? (((viewCount - chatCount) / viewCount) * 100).toFixed(2) : (((chatCount - viewCount) / chatCount) * 100).toFixed(2)}%</h4>
-        </div>
-      </div>
+      <Card raised={true} style={theme ? { background: "black", color: "white" } : { background: "white", color: "black" }}>
+        <CardContent>
+          <Typography variant="h4">{displayName}</Typography>
+          <img src="https://static-cdn.jtvnw.net/emoticons/v1/28/3.0" alt="robot" />
+          <Typography variant="subtitle1">View Count: {viewCount}</Typography>
+          <Typography variant="subtitle1">Chat Count: {chatCount}</Typography>
+          <Typography variant="subtitle1">Bots: {viewCount > chatCount ? viewCount - chatCount : chatCount - viewCount}</Typography>
+          <Typography variant="subtitle1">Bot Ratio: {viewCount > chatCount ? (((viewCount - chatCount) / viewCount) * 100).toFixed(2) : (((chatCount - viewCount) / chatCount) * 100).toFixed(2)}%</Typography>
+        </CardContent>
+        <CardActions>
+          <Button variant="contained" size="large" style={{ background: "#9146FF", marginLeft: "auto", marginRight: "auto" }}>
+            <Link href={`https://www.twitch.tv/${username}`} target="_blank" rel="noopener noreferrer" underline="none" style={{ color: "white" }}>
+              Watch Live
+            </Link>
+          </Button>
+        </CardActions>
+      </Card>
+    );
+  } else if (live === false && finishedLoading === true) {
+    return (
+      <Card raised={true} style={theme ? { background: "black", color: "white" } : { background: "white", color: "black" }}>
+        <CardContent>
+          <Typography variant="h4">Offline</Typography>
+          <img src="https://static-cdn.jtvnw.net/emoticons/v1/58765/3.0" alt="offline" />
+        </CardContent>
+        <CardActions>
+          <Button variant="contained" size="large" style={{ background: "#9146FF", marginLeft: "auto", marginRight: "auto", marginTop: 81 }}>
+            <Link href={`https://www.twitch.tv/${username}`} target="_blank" rel="noopener noreferrer" underline="none" style={{ color: "white" }}>
+              Visit Channel
+            </Link>
+          </Button>
+        </CardActions>
+      </Card>
     );
   } else {
-    return null;
+    return (
+      <Card raised={true} style={theme ? { background: "black", color: "white" } : { background: "white", color: "black" }}>
+        <CardContent>
+          <CircularProgress size={75} style={{ color: "#9146FF", marginTop: 90 }} />
+        </CardContent>
+      </Card>
+    );
   }
 }

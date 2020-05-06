@@ -1,39 +1,30 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
-* {
-  padding: 0;
-  margin: 0;
+html {
+  min-width: 452px;
 }
 
-h3 {
-  padding-top: 60px;
+.MuiAppBar-root {
+  padding: 10px 0px;
+}
+
+.MuiToolbar-root {
+  flex-direction: column;
+}
+
+.MuiContainer-maxWidthMd {
+  text-align: center;
+  padding-top: 45px;
+  height: 87.8vh;
+}
+
+.MuiTypography-h6 {
   padding-bottom: 10px;
 }
 
-p {
-  padding: 5px 0px;
-}
-
-.App {
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  background: #000000;
-  color: #f0f0ff;
-  text-align: center;
-  height: 100vh;
-}
-
-.app-title {
-  background: #141414;
-  font-size: 35px;
-  padding: 10px;
-}
-
-.app-form {
+.form-group {
   padding-top: 35px;
 }
 
-.app-input {
+.form-input {
   padding: 8px;
   width: 200px;
   outline: none;
@@ -41,7 +32,7 @@ p {
   border: 1px solid #000000;
 }
 
-.app-button {
+.form-button {
   padding: 8px;
   width: 80px;
   margin-left: 10px;
@@ -51,7 +42,7 @@ p {
   font-weight: bold;
 }
 
-.app-form button:hover {
+.form-group button:hover {
   background: #9146ff;
   color: white;
   cursor: pointer;
