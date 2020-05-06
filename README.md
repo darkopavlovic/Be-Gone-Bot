@@ -17,6 +17,13 @@ This app is hosted on [Heroku](https://begonebot.herokuapp.com).
 - Create a .env file that contains PORT, NODE_ENV, CLIENT_ID, CLIENT_SECRET
 - Start dev server with `npm run dev`
 
+# Built With
+
+- NodeJS with Express
+- React
+- Twitch API
+- Material UI
+
 # License
 
 This project is licensed under the MIT License.

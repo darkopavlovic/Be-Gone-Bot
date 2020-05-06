@@ -24,7 +24,7 @@ function App() {
   // Displays channel component
   const displayChannelCard = (e) => {
     e.preventDefault();
-    const tempUsername = username.replace(/\s+/g, "");
+    const tempUsername = username.replace(/\s+/g, "").toLowerCase();
     if (tempUsername.length !== 0) {
       setQuery(tempUsername);
       setUsername(tempUsername);
@@ -40,14 +40,25 @@ function App() {
       <CssBaseline />
       <AppBar position="static" style={darkTheme ? { background: "black" } : { background: "#9146FF" }}>
         <Toolbar>
-          <Typography variant="h3">🤖 Be Gone Bot 🤖</Typography>
+          <Typography variant="h3">
+            <span role="img" aria-label="robot">
+              🤖
+            </span>{" "}
+            Be Gone Bot{" "}
+            <span role="img" aria-label="robot">
+              🤖
+            </span>
+          </Typography>
           <FormControlLabel label="Dark Mode 🌙" labelPlacement="start" control={<Switch checked={darkTheme} onChange={darkMode} />} />
         </Toolbar>
       </AppBar>
       <Container disableGutters={true} maxWidth={false} style={darkTheme ? { background: "#262626" } : { background: "white" }}>
         <Container maxWidth="md">
           <Typography variant="h6" style={darkTheme ? { fontWeight: "bold", color: "white" } : { fontWeight: "bold", color: "black" }}>
-            How does this work? 🤔
+            How does this work?{" "}
+            <span role="img" aria-label="think">
+              🤔
+            </span>
           </Typography>
           <Typography variant="body1" style={darkTheme ? { color: "white" } : { color: "black" }}>
             Be Gone Bot compares the current viewer count with the number of users in chat. If the channel has significantly more viewers than users in chat, then it's probably viewbotting. If the channel has more users in chat than viewers, then
