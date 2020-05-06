@@ -77,12 +77,6 @@ export default function Channel({ username, theme }) {
       </Card>
     );
   } else {
-    return (
-      <Card raised={true} style={theme ? { background: "black", color: "white" } : { background: "white", color: "black" }}>
-        <CardContent>
-          <CircularProgress size={75} style={{ color: "#9146FF", marginTop: 90 }} />
-        </CardContent>
-      </Card>
-    );
+    return <CircularProgress size={75} style={{ color: "#9146FF", marginTop: 90 }} />;
   }
 }
