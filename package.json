@@ -1,7 +1,7 @@
 {
   "name": "be-gone-bot",
   "version": "1.0.0",
-  "description": "Tool for detecting fake engagement on Twitch.",
+  "description": "Tool for detecting fake engagement on Twitch",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
