@@ -1,5 +1,6 @@
-html {
-  min-width: 452px;
+#root {
+  height: 100vh;
+  min-width: 296px;
 }
 
 .MuiAppBar-root {
@@ -13,7 +14,6 @@ html {
 .MuiContainer-maxWidthMd {
   text-align: center;
   padding-top: 45px;
-  height: 87.8vh;
 }
 
 .MuiTypography-h6 {

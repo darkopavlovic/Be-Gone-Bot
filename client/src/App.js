@@ -1,5 +1,5 @@
 // Import required packages
-import { AppBar, Toolbar, Typography, Container, CssBaseline, Switch, FormControlLabel } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Container, CssBaseline, Switch, FormControlLabel, Box } from "@material-ui/core";
 import React, { useState } from "react";
 import "./App.css";
 import Channel from "./Channel";
@@ -27,7 +27,6 @@ function App() {
     const tempUsername = username.replace(/\s+/g, "").toLowerCase();
     if (tempUsername.length !== 0) {
       setQuery(tempUsername);
-      setUsername(tempUsername);
       setVisible(true);
     } else {
       setUsername("");
@@ -38,27 +37,16 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <AppBar position="static" style={darkTheme ? { background: "black" } : { background: "#9146FF" }}>
-        <Toolbar>
-          <Typography variant="h3">
-            <span role="img" aria-label="robot">
-              🤖
-            </span>{" "}
-            Be Gone Bot{" "}
-            <span role="img" aria-label="robot">
-              🤖
-            </span>
-          </Typography>
-          <FormControlLabel label="Dark Mode 🌙" labelPlacement="start" control={<Switch checked={darkTheme} onChange={darkMode} />} />
-        </Toolbar>
-      </AppBar>
-      <Container disableGutters={true} maxWidth={false} style={darkTheme ? { background: "#262626" } : { background: "white" }}>
+      <Box height="100%" style={darkTheme ? { background: "#262626" } : { background: "white" }}>
+        <AppBar position="static" style={darkTheme ? { background: "black" } : { background: "#9146FF" }}>
+          <Toolbar>
+            <Typography variant="h3">Be Gone Bot</Typography>
+            <FormControlLabel label="Dark Mode 🌙" labelPlacement="start" control={<Switch checked={darkTheme} onChange={darkMode} />} />
+          </Toolbar>
+        </AppBar>
         <Container maxWidth="md">
           <Typography variant="h6" style={darkTheme ? { fontWeight: "bold", color: "white" } : { fontWeight: "bold", color: "black" }}>
-            How does this work?{" "}
-            <span role="img" aria-label="think">
-              🤔
-            </span>
+            How does this work?
           </Typography>
           <Typography variant="body1" style={darkTheme ? { color: "white" } : { color: "black" }}>
             Be Gone Bot compares the current viewer count with the number of users in chat. If the channel has significantly more viewers than users in chat, then it's probably viewbotting. If the channel has more users in chat than viewers, then
@@ -72,7 +60,7 @@ function App() {
           </form>
           {visible ? <Channel username={query} theme={darkTheme}></Channel> : null}
         </Container>
-      </Container>
+      </Box>
     </>
   );
 }
