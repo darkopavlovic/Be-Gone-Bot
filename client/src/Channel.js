@@ -1,11 +1,9 @@
-// Import required packages
 import { Card, CardActions, CardContent, Button, Typography, Link, CircularProgress } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Channel.css";
 
 export default function Channel({ username, theme }) {
-  // Channel data state
   const [viewCount, setViewCount] = useState(0);
   const [chatCount, setChatCount] = useState(0);
   const [displayName, setDisplayName] = useState("");

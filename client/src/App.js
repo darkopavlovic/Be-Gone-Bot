@@ -1,11 +1,9 @@
-// Import required packages
 import { AppBar, Toolbar, Typography, Container, CssBaseline, Switch, FormControlLabel, Box } from "@material-ui/core";
 import React, { useState } from "react";
 import "./App.css";
 import Channel from "./Channel";
 
 function App() {
-  // App state
   const [username, setUsername] = useState("");
   const [query, setQuery] = useState("");
   const [visible, setVisible] = useState(false);
