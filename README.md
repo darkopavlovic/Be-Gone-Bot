@@ -2,7 +2,7 @@
 
 Tool for detecting fake engagement on Twitch.
 
-Be Gone Bot compares the current viewer count with the number of users in chat. If the channel has significantly more viewers than users in chat, then it's probably viewbotting. If the channel has more users in chat than viewers, then those are most likely chat bots.
+Be Gone Bot compares the current viewer count with the number of users in chat. If the channel has significantly more viewers than users in chat, then it's probably viewbotting or embedded viewers. If the channel has more users in chat than viewers, then those are most likely chat bots.
 
 **Disclaimer:** This tool is for educational purposes only and is not affiliated with Twitch. It should not be used as definitive proof to accuse users of viewbotting. To learn more about viewbotting and fake engagement check out the official Twitch [page](https://help.twitch.tv/s/article/how-to-handle-view-follow-bots?language=en_US).
 

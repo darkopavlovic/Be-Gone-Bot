@@ -47,8 +47,8 @@ function App() {
             How does this work?
           </Typography>
           <Typography variant="body1" style={darkTheme ? { color: "white" } : { color: "black" }}>
-            Be Gone Bot compares the current viewer count with the number of users in chat. If the channel has significantly more viewers than users in chat, then it's probably viewbotting. If the channel has more users in chat than viewers, then
-            those are most likely chat bots.
+            Be Gone Bot compares the current viewer count with the number of users in chat. If the channel has significantly more viewers than users in chat, then it's probably viewbotting or embedded viewers. If the channel has more users in chat
+            than viewers, then those are most likely chat bots.
           </Typography>
           <form className="form-group" onSubmit={displayChannelCard}>
             <input className="form-input" type="text" placeholder="Enter Twitch Username" value={username} onChange={updateUsername} />
