@@ -1,5 +1,5 @@
-import { AppBar, Toolbar, Typography, Container, CssBaseline, Switch, FormControlLabel, Box } from "@material-ui/core";
-import React, { useState } from "react";
+import { AppBar, Box, Container, CssBaseline, FormControlLabel, Switch, Toolbar, Typography } from "@material-ui/core";
+import { useState } from "react";
 import "./App.css";
 import Channel from "./Channel";
 

@@ -1,5 +1,5 @@
-import { Card, CardActions, CardContent, Button, Typography, Link, CircularProgress } from "@material-ui/core";
-import React, { useState, useEffect } from "react";
+import { Button, Card, CardActions, CardContent, CircularProgress, Link, Typography } from "@material-ui/core";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Channel.css";
 
@@ -18,8 +18,8 @@ export default function Channel({ username, theme }) {
     axios.all([streamAPI, chatAPI]).then(
       axios.spread((...allData) => {
         if (allData[0].data.length !== 0) {
-          setViewCount(allData[0].data[0].viewer_count);
-          setDisplayName(allData[0].data[0].user_name);
+          setViewCount(allData[0].data.viewer_count);
+          setDisplayName(allData[0].data.user_name);
           setChatCount(allData[1].data.chatter_count);
           setLive(true);
           setFinishedLoading(true);
