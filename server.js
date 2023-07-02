@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 
 // Express gets called
 const app = express();
