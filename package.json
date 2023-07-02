@@ -1,0 +1,31 @@
+{
+  "name": "be-gone-bot",
+  "version": "1.0.0",
+  "description": "Tool for detecting fake engagement on Twitch",
+  "main": "server.js",
+  "scripts": {
+    "setup": "npm install && cd client && npm install",
+    "client": "cd client && npm start",
+    "start": "node server.js",
+    "dev": "concurrently \"nodemon server.js\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darkopavlovic/Be-Gone-Bot.git"
+  },
+  "author": "Darko Pavlovic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darkopavlovic/Be-Gone-Bot/issues"
+  },
+  "homepage": "https://github.com/darkopavlovic/Be-Gone-Bot#readme",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "dotenv": "^8.6.0",
+    "nodemon": "^1.14.9"
+  }
+}

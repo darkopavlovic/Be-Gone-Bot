@@ -1,0 +1,49 @@
+#root {
+  height: 100vh;
+  min-width: 296px;
+}
+
+.MuiAppBar-root {
+  padding: 10px 0px;
+}
+
+.MuiToolbar-root {
+  flex-direction: column;
+}
+
+.MuiContainer-maxWidthMd {
+  text-align: center;
+  padding-top: 45px;
+}
+
+.MuiTypography-h6 {
+  padding-bottom: 10px;
+}
+
+.form-group {
+  padding-top: 35px;
+}
+
+.form-input {
+  padding: 8px;
+  width: 200px;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #000000;
+}
+
+.form-button {
+  padding: 8px;
+  width: 80px;
+  margin-left: 10px;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #000000;
+  font-weight: bold;
+}
+
+.form-group button:hover {
+  background: #9146ff;
+  color: white;
+  cursor: pointer;
+}

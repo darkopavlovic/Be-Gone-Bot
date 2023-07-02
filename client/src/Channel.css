@@ -1,0 +1,15 @@
+.MuiCard-root {
+  width: 350px;
+  height: 375px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.MuiTypography-h4 {
+  padding-bottom: 15px;
+}
+
+img {
+  padding-bottom: 15px;
+}
