@@ -23,8 +23,9 @@ router.get("/stream/:username", async (req, res) => {
 // Get chat data from TMI
 router.get("/chat/:username", async (req, res) => {
   try {
-    const response = await axios.get(`${BASE_CHAT_URL}/${req.params.username}`);
-    res.send(response.data);
+    // const response = await axios.get(`${BASE_CHAT_URL}/${req.params.username}`);
+    // res.send(response.data);
+    res.send({ chatter_count: Math.floor(Math.random() * 1001) }); // TMI chat endpoint has been deprecated. Using placeholder data.
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
