@@ -3,11 +3,7 @@ const cors = require("cors");
 
 // Initialize Express and middleware
 const app = express();
-app.use(
-  cors({
-    origin: `${process.env.CORS_ORIGIN}`
-  })
-);
+app.use(cors());
 
 // Dev environment
 if (process.env.NODE_ENV !== "production") {
