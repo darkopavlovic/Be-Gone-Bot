@@ -12,8 +12,8 @@ export default function Channel({ username, theme }) {
 
   // Get Twitch stream and chat data
   const fetchData = () => {
-    const streamAPI = axios.get(`${process.env.REACT_APP_API_URL}/channel/stream/${username}`);
-    const chatAPI = axios.get(`${process.env.REACT_APP_API_URL}/channel/chat/${username}`);
+    const streamAPI = axios.get(`/channel/stream/${username}`);
+    const chatAPI = axios.get(`/channel/chat/${username}`);
 
     axios.all([streamAPI, chatAPI]).then(
       axios.spread((...allData) => {

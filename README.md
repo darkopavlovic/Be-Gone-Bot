@@ -16,7 +16,7 @@ This app is hosted on [Render](https://be-gone-bot.onrender.com).
 
 - Prerequisite: Node 20.X.X
 - Install dependencies by running `npm run setup`
-- Create .env files that contain PORT, NODE_ENV, CORS_ORIGIN, CLIENT_ID, CLIENT_SECRET, REACT_APP_API_URL
+- Create .env files that contain PORT, NODE_ENV, CORS_ORIGIN, CLIENT_ID, CLIENT_SECRET
 - Start dev server with `npm run dev`
 
 ## Tech Stack
