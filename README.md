@@ -6,7 +6,7 @@ Be Gone Bot compares the current viewer count with the number of users in chat. 
 
 **Disclaimer:** This tool is for educational purposes only and is not affiliated with Twitch. It should not be used as definitive proof to accuse users of viewbotting. To learn more about viewbotting and fake engagement check out the official Twitch [page](https://help.twitch.tv/s/article/how-to-handle-view-follow-bots?language=en_US).
 
-**Announcement:** [Legacy Chatters endpoint shutdown details and timeline](https://discuss.dev.twitch.tv/t/legacy-chatters-endpoint-shutdown-details-and-timeline-april-2023/43161)
+**Announcement:** [Legacy Chatters endpoint shutdown](https://discuss.dev.twitch.tv/t/legacy-chatters-endpoint-shutdown-details-and-timeline-april-2023/43161)
 
 ## Usage
 
@@ -16,7 +16,7 @@ This app is hosted on [Render](https://be-gone-bot.onrender.com).
 
 - Prerequisite: Node 20.X.X
 - Install dependencies by running `npm run setup`
-- Create a .env files that contains PORT, NODE_ENV, CLIENT_ID, CLIENT_SECRET, REACT_APP_API_URL, CORS_ORIGIN
+- Create .env files that contain PORT, NODE_ENV, CORS_ORIGIN, CLIENT_ID, CLIENT_SECRET, REACT_APP_API_URL
 - Start dev server with `npm run dev`
 
 ## Tech Stack
